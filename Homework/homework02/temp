@@ -58,7 +58,7 @@ It performs the all the math and bitwise operations on integers using operands.
 128+16+4+2+1 = 151
 
 19. What is the decimal value of 111111112?
-28+64+32+16+8+4+2+1 = 255
+128+64+32+16+8+4+2+1 = 255
 
 20. What is the largest unsigned integer value that will fit into 16 bits?
 
