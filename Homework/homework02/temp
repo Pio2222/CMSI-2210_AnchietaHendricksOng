@@ -25,7 +25,8 @@ Dennis Ritchie
 10. What does the C function atof() do?
 
 11. What are the bottom two layers of a computer system? Give a brief desciption of each.
-The bottom layer
+The bottom layer, digital logic, is the hardware that the computer operations are run on. It includes the motherboards and all the ciruitry
+The next layer is the control layer, which has the microcode. The microcode uses the hardware
 
 
 12. What are the three steps of the Von Neumann Architecture?
