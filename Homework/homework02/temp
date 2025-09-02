@@ -5,6 +5,7 @@ A set of layers that work off of the ones under them. Different hardware and sof
 Motherboards and circuits In the digital logic lair
 
 3. What is the difference between a compiled language and an intepreted language?
+The difference is when they convert. A compiled language converts all the source code to machine code before the program runs, an intepreted language does it line by line as it's running (https://unstop.com/blog/difference-between-compiler-and-interpreter#:~:text=The%20major%20difference%20between%20the,line%2C%20as%20it's%20being%20run.)
 
 4. Is C a compiled language?
 
@@ -41,4 +42,6 @@ Motherboards and circuits In the digital logic lair
 28+64+32+16+8+4+2+1 = 255
 
 20. What is the largest unsigned integer value that will fit into 16 bits?
+
+
 
