@@ -8,10 +8,13 @@ Motherboards and circuits In the digital logic lair
 The difference is when they convert. A compiled language converts all the source code to machine code before the program runs, an intepreted language does it line by line as it's running (https://unstop.com/blog/difference-between-compiler-and-interpreter#:~:text=The%20major%20difference%20between%20the,line%2C%20as%20it's%20being%20run.)
 
 4. Is C a compiled language?
+Yes
 
 5. Who invented the C language?
+Dennis Ritchie
 
 6. How long has C been in use?
+1972
 
 7. Is a compiler a translator?
 
