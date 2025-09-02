@@ -38,14 +38,19 @@ The next layer is the control layer, which has the microcode. The microcode uses
 
 
 13. What is the purpose of an ALU?
-
+It performs the all the math and bitwise operations on integers using operands.
 
 14. What is a register?
 
+
 15. What is one difference between Application software and System software?
+
+
 16. Is the phrase cmp rdi, rsi machine language?
 
+
 17.How many buses are included in the system bus?
+3. Data, address and control
 
 18. What is the decimal value of 100101112?
 128+16+4+2+1 = 151
