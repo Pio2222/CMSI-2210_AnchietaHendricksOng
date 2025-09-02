@@ -17,8 +17,10 @@ Dennis Ritchie
 1972
 
 7. Is a compiler a translator?
+Yes, from source code to assembly code
 
 8. Is an assembler a translator?
+Yes, from assembly code to machine code
 
 9. What is the command to list out the contents of a directory on a mac terminal window?
 
