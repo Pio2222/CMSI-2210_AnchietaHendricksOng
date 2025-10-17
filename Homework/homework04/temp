@@ -1,1 +1,127 @@
+1. 
+Y = C or not A
+X = A or (B and C)
+
+3.
+Clear all even numbered bits.
+AND r0,r0, 0xAAAAAAAA
+
+Set the last three bits.
+Or r0,r0, 0x00007
+
+Compute the remainder when divided by 8.
+And r0,r0, 0x00007
+
+Make the value -1
+Mov r0,r0, 0xFFFFFFFF
+
+Complement the two highest order bits ['complement' means change the binary value to its opposite state — if it's a '1' it becomes a '0' and/or the other way round]
+Xor r0,r0, C0000000
+
+Compute the largest multiple of 8 less than or equal to the value itself [a multiple of 8 is a value that can be divided evenly by 8, like 16, 32, 48, 64, 80, etc.]
+And r0,r0, 0xFFFFFFF8
+
+4.
+#include <stdio.h>
+int main() {
+     int N;
+     printf("Enter max value");
+     scanf("%d", &N);
+     if (N<=0){
+          printf("N must be greater than 0\n");
+          return 1;
+     }
+     for (int i = 1; i <= N;i++) {
+          if (i % 15 == 0) {
+               printf ("fizzbuzz\n");
+          } else if (i % 3 == 0) {
+               printf ("fizz\n");
+          } else if (i % 5 == 0) {
+               printf ("buzz\n");
+          } else {
+               printf ("%d\n", i);
+          }
+     }
+     return 0;
+}
+
+5.
+For the sample Stanley/Penguinsingle-accumulator computer discussed in class, write a complete assembly language program in the Stanley/Penguinlanguage that sends the values 0 through 255 out to port 0x8. NOTE: the machine code for this will be written in the next problem.
+        JMP   start        ; jump over data section
+
+count:  0                 ; current value
+one:    1                 ; increment value
+limit:  256               ; loop stops when count reaches this
+
+start: LOAD  [count]     ; A = count
+        WRITE 0x8         ; output A to port 0x8
+        ADD   [one]       ; A = count + 1
+        STORE [count]     ; update count
+        SUB   [limit]     ; A = count - limit
+        JLZ   start       ; if count < limit, loop again
+
+end: JMP   end         ; halt program
+
+6.
+Translate your Stanley/Penguinlanguage program in the previous problem to machine language.
+C0000004 ; JMP start (start is at address 0x00000004)
+00000000 ; count = 0
+00000001 ; one = 1
+00000100 ; limit = 256
+00000001 ; LOAD [count] opcode 0, addr 0x00000001
+30000008 ; WRITE 0x8 opcode 3, port 0x00000008
+40000002 ; ADD [one] opcode 4, addr 0x00000002
+10000001 ; STORE [count] opcode 1, addr 0x00000001
+50000003 ; SUB [limit] opcode 5, addr 0x00000003
+E0000004 ; JLZ start opcode E, addr 0x00000004
+C000000A ; JMP end opcode C, addr 0x0000000A
+
+7.
+For the sample single-accumulator computer discussed in class, write a complete assembly language program in the stanley/penguinlanguage that computes a greatest common divisor. Assume the two inputs are read in from port 0x100. Write the result to port 0x200. You do not need to write machine code for this problem.
+		JMP		start
+	inp1:	0
+	inp2:	0
+	temp: 	0
+start:	READ		0x100
+		STORE	[inp1]
+		READ 		0x100
+		STORE 	[inp2]
+	loop:    LOAD 		[inp2]
+		JZ 		done
+		LOAD 		[inp1]
+		MOD		[inp2]
+		STORE	[temp]
+		LOAD 		[inp2]
+		STORE 	[inp1]
+		LOAD 		[temp]
+		STORE 	[inp2]
+		JMP		loop
+	done:	LOAD 		[inp1]
+		WRITE		0x200
+		JMP		done
+
+8.
+For the sample single-accumulator computer discussed in class, give a code fragment, in assembly language of the stanley/penguin language, that swaps the accumulator and memory address 0x30AA. You do not need to write machine code for this problem.
+		STORE	[temp]
+		LOAD		[0x30AA]
+		STORE	[swap]
+		LOAD		[temp]
+		STORE	[0x30AA]
+		LOAD		[swap]
+
+9.
+For the sample single-accumulator computer discussed in class, give a code fragment, in assembly language of the stanley/penguin language that has the effect of jumping to the code at address 0x837BBE1 if the value in the accumulator is greater than or equal to 0. You do not need to write machine code for this problem.
+		JGZ	0x837BBE1
+		JZ	0x837BBE1
+
+10.
+Part 1 of 2: Explain, at a high-level, what the following sequence of instructions does. In other words, suppose a programmer has stored data in r8and r9. After executing these instructions, what does the programmer notice about the data? [HINT: It will help if you pick some binary values and walk through the operations.]
+
+It swaps the values of r8 and r9. 
+     xor r8, r9
+      xor r9, r8
+      xor r8, r9                   
+Part 2 of 2: Also state as briefly as possible why that effect happens.
+If you use Xor on the same number twice, it will go back to normal. They get mixed and then unmixed in a different register
+
 
