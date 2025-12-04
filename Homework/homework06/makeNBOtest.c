@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
-#include "makeNBOC.h"
+
+uint32_t makeNBOC(uint32_t x);
 
 int main() {
     uint32_t test_values[] = {
