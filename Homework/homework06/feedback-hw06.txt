@@ -1,0 +1,102 @@
+
+
+Evaluation Criteria ~ homework06
+CMSI 2210 Section all Fall 2025
+=================================
+                                    score
+FINDGCD.NASM                        ------
+   nasm file assembles  [5 pts.]    4 pts.
+   nasm runs            [5 pts.]    5 pts.
+   output correct       [3 pts.]    0 pts.
+GCDFINDER
+   nasm file assembles  [5 pts.]    5 pts.
+   gcdFinder.c compiles [5 pts.]    5 pts.
+   link both files OK   [5 pts.]    4 pts.
+   nasm returns value   [5 pts.]    5 pts.
+   output correct       [3 pts.]    3 pts.
+PARITYGEN
+   nasm file assembles  [5 pts.]    5 pts.
+   nasm runs            [5 pts.]    5 pts.
+   output correct       [3 pts.]    3 pts.
+WHICHENDISUP
+   compiles no errors   [5 pts.]    5 pts.
+   runs no errors       [5 pts.]    5 pts.
+MAKENBOC.C
+   compiles no errors   [5 pts.]    5 pts.
+   uses previous func.  [5 pts.]    5 pts.
+   tester compiles      [5 pts.]    5 pts.
+   tester runs          [5 pts.]    0 pts.
+   output correct       [3 pts.]    0 pts.
+MAKENBO.NASM [Extra credit]
+   nasm file assembles  [5 pts.]    0 pts.
+   link all files OK    [5 pts.]    0 pts.
+   calls "C" function   [5 pts.]    5 pts.
+   output correct       [3 pts.]    0 pts.
+
+Total possible points 82
+   plus 18 extra credit
+   possible maximum of 118%
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 69.00/82.00 which is 84.14%
+   5 extra credit points which is 89.14% which is a B-plus
+TOTAL EARNED POINTS:
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+NOTICE:
+========
+You didn't include file headers to specify how to build the programs.
+This was a requirement which was stated several times verbally in class.
+You were supposed to include three lines of header:
+   what platform you used mac, windows, etc
+   the command[s] to compile/assemble your code
+   the command[s] to link your code to make the program
+For the programs that I have had to 'monkey around with' you will lose
+   some points.  You will lose even more points if I'm unable to get
+   the program to compile/link/run correctly even with my changes.
+
+problem 1 findGCD.nasm
+   had to change from _start to _main
+   also get no output when running the program
+   did the best I could with what you gave me
+
+problem 2 findGCDfunc.nasm & gcdFinder.c
+   had to insert underscore in front of function name
+   then program runs fine
+
+problem 3 paritygen.nasm
+   works as advertised
+
+problem 4 whichEndIsUp.c
+   works as advertised
+
+problem 5 makeNBOC.c & makeNBOCtest.c
+   changed to winsock2.h to compile makeNBOC.c on windows
+   makeNBOC.c compiles fine
+   makeNBOCtest.c compiles fine
+   can't get program to link on windows
+
+problem 6 makeNBOC.c & makeNBON.nasm
+   your code has mixed up 32-bit and 64-bit addressing so it won't work
+   it won't compile at all on windows 32-bit
+   You *DO* have your assembly program call your "C" function
+
+========================================================
+SEMESTER HOMEWORK TOTALS:
+
+   Homework01  100.00% of  5 points =  5.00 points
+   Homework02  100.00% of  5 points =  5.00 points
+   Homework03  104.22% of  5 points =  5.20 points
+   Homework04   94.44% of  5 points =  4.72 points
+   Homework05   98.00% of 10 points =  9.80 points
+   homework06   89.14% of 15 points = 12.62 points
+                      semester total: 42.34 out of 45.00 = 94.09%
+                             which is an A
+
+Great work!  It's been wonderful having you three in class this semester!
+Best wishes for a great holiday break and I look forward to seeing you all
+around campus in the spring!

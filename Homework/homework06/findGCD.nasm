@@ -1,4 +1,7 @@
-global _start
+; global _start
+; needs to be _main for windows
+; no header in file with build instructions
+global _main
 
 section .bss
     inbuf  resb 128
@@ -6,7 +9,8 @@ section .bss
 
 section .text
 
-_start:
+;_start:
+_main:
     mov eax,3
     mov ebx,0
     mov ecx,inbuf

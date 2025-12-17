@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdint.h>
-#include <arpa/inet.h>
+// #include <arpa/inet.h>
+// changed to winsock2.h for windows
+#include <winsock2.h>
 
 int is_little_endian() {
     unsigned int x = 0x12345678;
@@ -19,5 +21,5 @@ uint32_t makeNBOC(uint32_t x){
   if (is_little_endian()) {
     x = htonl(x);
   }
-  return x; 
+  return x;
 }

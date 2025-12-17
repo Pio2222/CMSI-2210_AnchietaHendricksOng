@@ -1,6 +1,11 @@
-global main
-extern makeNBOC
-extern printf
+; global main
+; extern makeNBOC
+; extern printf
+; all need underscores
+global _main
+extern _makeNBOC
+extern _printf
+
 
 section .data
 fmt:    db "Result: 0x%08X", 10, 0
@@ -14,18 +19,18 @@ test_values:
 
 section .text
 
-main:
+_main:
     mov rcx, 5
     lea rbx, [test_values]
 
 next_value:
     mov edi, [rbx]
-    call makeNBOC
+    call _makeNBOC
 
     mov rdi, fmt
     mov esi, eax
     xor eax, eax
-    call printf
+    call _printf
 
     add rbx, 4
     dec rcx

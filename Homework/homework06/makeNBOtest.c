@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdint.h>
+// added to try to get this to link
+#include <winsock2.h>
+
 
 uint32_t makeNBOC(uint32_t x);
 

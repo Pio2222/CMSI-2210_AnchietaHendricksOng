@@ -1,8 +1,10 @@
-global findGCDfunc
+; global findGCDfunc
+; need underscore in front
+global _findGCDfunc
 
 section .text
 
-findGCDfunc:
+_findGCDfunc:
     push ebp
     mov ebp, esp
     push ebx
